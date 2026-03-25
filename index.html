@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Ranvir Digital Marketing - Affordable digital marketing services from ₹500 to ₹10,000. Get detailed product info, on-demand pricing, and free consultation.">
+  <title>Ranvir Digital Marketing | Affordable Digital Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0B0B0F;
+      color: #F5F5F5;
+      scroll-behavior: smooth;
+      line-height: 1.5;
+    }
+    :root {
+      --bg-dark: #0B0B0F;
+      --bg-card: #13131A;
+      --bg-elevated: #1C1C24;
+      --gold-primary: #D4AF37;
+      --gold-hover: #F5C542;
+      --white-pure: #FFFFFF;
+      --text-muted: #A0A0B0;
+      --border-light: #2A2A35;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(11, 11, 15, 0.95);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--border-light);
+      padding: 16px 0;
+    }
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo h1 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FFF 30%, var(--gold-primary) 80%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .logo span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: block;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      color: #E5E5E5;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--gold-primary);
+    }
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--gold-primary);
+    }
+    .btn-primary, .btn-secondary {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+    }
+    .btn-primary {
+      background: var(--gold-primary);
+      color: #0B0B0F;
+      box-shadow: 0 8px 20px rgba(212, 175, 55, 0.2);
+    }
+    .btn-primary:hover {
+      background: var(--gold-hover);
+      transform: translateY(-3px);
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 1.5px solid var(--gold-primary);
+      color: var(--gold-primary);
+    }
+    .btn-secondary:hover {
+      background: var(--gold-primary);
+      color: #0B0B0F;
+    }
+    section {
+      padding: 80px 0;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .section-title span {
+      color: var(--gold-primary);
+      border-bottom: 3px solid var(--gold-primary);
+      padding-bottom: 8px;
+    }
+    .hero {
+      padding: 100px 0 60px;
+    }
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .hero-content {
+      flex: 1;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hero-highlight {
+      color: var(--gold-primary);
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 20px;
+      margin: 32px 0 24px;
+      flex-wrap: wrap;
+    }
+    .trust-badge {
+      display: flex;
+      gap: 32px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .trust-item i {
+      font-size: 1.6rem;
+      color: var(--gold-primary);
+    }
+    .products-grid, .services-grid, .testimonial-grid, .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .product-card, .service-card, .testimonial-card, .blog-card {
+      background: var(--bg-card);
+      border-radius: 24px;
+      padding: 28px 20px;
+      transition: all 0.3s;
+      border: 1px solid var(--border-light);
+    }
+    .product-card:hover, .service-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold-primary);
+    }
+    .product-icon, .service-icon {
+      font-size: 2.5rem;
+      color: var(--gold-primary);
+      margin-bottom: 20px;
+    }
+    .product-price {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--gold-primary);
+      margin: 16px 0;
+    }
+    .product-price small {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+    .price-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 12px;
+      font-style: italic;
+    }
+    .btn-details {
+      margin-top: 16px;
+      width: 100%;
+      background: transparent;
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-primary);
+      padding: 10px;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .btn-details:hover {
+      background: var(--gold-primary);
+      color: #0B0B0F;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: var(--bg-elevated);
+      max-width: 600px;
+      width: 90%;
+      border-radius: 28px;
+      padding: 32px;
+      position: relative;
+      border: 1px solid var(--gold-primary);
+      max-height: 85vh;
+      overflow-y: auto;
+    }
+    .modal-content h2 {
+      color: var(--gold-primary);
+      margin-bottom: 16px;
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+    .modal-close:hover {
+      color: var(--gold-primary);
+    }
+    .product-detail-info {
+      margin: 20px 0;
+      border-top: 1px solid var(--border-light);
+      padding-top: 16px;
+    }
+    .product-detail-info p {
+      margin: 12px 0;
+    }
+    .contact-bar {
+      background: var(--bg-card);
+      padding: 12px 24px;
+      border-radius: 60px;
+      display: inline-flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .contact-bar i {
+      margin-right: 8px;
+      color: var(--gold-primary);
+    }
+    /* Enhanced Form Styles */
+    .contact-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      background: var(--bg-card);
+      border-radius: 32px;
+      padding: 40px;
+    }
+    .contact-info {
+      flex: 1;
+    }
+    .contact-form {
+      flex: 1.5;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: var(--gold-primary);
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 14px 18px;
+      background: #1E1E26;
+      border: 1px solid var(--border-light);
+      border-radius: 16px;
+      color: white;
+      font-family: inherit;
+      transition: 0.2s;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .budget-slider {
+      margin-top: 10px;
+    }
+    input[type="range"] {
+      width: 100%;
+      padding: 0;
+      background: var(--border-light);
+    }
+    .budget-value {
+      text-align: center;
+      margin-top: 8px;
+      color: var(--gold-primary);
+      font-weight: 600;
+    }
+    .service-checkboxes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .service-checkboxes label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: normal;
+      cursor: pointer;
+    }
+    .service-checkboxes input {
+      width: auto;
+      margin-right: 5px;
+    }
+    footer {
+      background: #07070a;
+      padding: 40px 0;
+      text-align: center;
+      border-top: 1px solid var(--border-light);
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #25D366;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      color: white;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      z-index: 99;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+    @media (max-width: 992px) {
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background: #13131ad9;
+        backdrop-filter: blur(12px);
+        padding: 20px;
+        border-radius: 24px;
+        margin-top: 16px;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .hamburger {
+        display: block;
+      }
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .service-checkboxes {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="container nav-wrapper">
+    <div class="logo">
+      <h1>Ranvir Digital Marketing</h1>
+      <span>Performance-driven solutions</span>
+    </div>
+    <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#products">Digital Products</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section id="home" class="hero">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <h1>Grow Your Business with <span class="hero-highlight">Result-Driven</span> Digital Marketing</h1>
+      <p style="font-size: 1.2rem; color: #C0C0D0;">Affordable packages from ₹500 to ₹10,000. Custom pricing after consultation.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn-primary"><i class="fas fa-chalkboard-user"></i> Get Free Consultation</a>
+        <a href="#products" class="btn-secondary"><i class="fas fa-tags"></i> View Products</a>
+      </div>
+      <div class="trust-badge">
+        <div class="trust-item"><i class="fas fa-chart-line"></i> <span>100+ Clients</span></div>
+        <div class="trust-item"><i class="fas fa-rupee-sign"></i> <span>Starting ₹500</span></div>
+        <div class="trust-item"><i class="fas fa-headset"></i> <span>Price on Demand</span></div>
+      </div>
+    </div>
+    <div class="hero-content" style="text-align: center;">
+      <i class="fas fa-chart-simple" style="font-size: 10rem; color: var(--gold-primary); opacity: 0.5;"></i>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <h2 class="section-title"><span>About Ranvir Digital</span></h2>
+    <div class="about-grid" style="display: flex; gap: 48px; flex-wrap: wrap; background: var(--bg-elevated); border-radius: 32px; padding: 40px;">
+      <div class="about-text" style="flex:1">
+        <h3 style="color: var(--gold-primary);">Your Growth Partner</h3>
+        <p>Ranvir Digital Marketing, led by Ranvir Kumar, delivers complete digital marketing solutions – from Google Business Profile optimization to full-scale ad campaigns. Based in Dhanbad, we serve businesses across India with affordable, high-impact services.</p>
+        <div class="trust-badge" style="margin-top: 24px;">
+          <div class="trust-item"><i class="fas fa-map-marker-alt"></i> Murli Nagar, Saraidhela, Dhanbad</div>
+          <div class="trust-item"><i class="fas fa-phone-alt"></i> 8825216308</div>
+        </div>
+      </div>
+      <div class="about-text" style="flex:1">
+        <h3>Why Choose Us?</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+          <div><i class="fas fa-check-circle gold-text"></i> Transparent Pricing</div>
+          <div><i class="fas fa-check-circle gold-text"></i> Custom Plans</div>
+          <div><i class="fas fa-check-circle gold-text"></i> Fast Turnaround</div>
+          <div><i class="fas fa-check-circle gold-text"></i> Dedicated Support</div>
+        </div>
+        <p class="price-note" style="margin-top: 30px;">*Prices are indicative and can be negotiated based on project scope after consultation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <h2 class="section-title"><span>Our Core Services</span></h2>
+    <div class="services-grid">
+      <div class="service-card"><div class="service-icon"><i class="fab fa-google"></i></div><h3>Google Business Profile</h3><p>Complete optimization to rank in local search & maps. Get more calls and visits.</p><div class="product-price">₹1,500<span> / setup</span></div></div>
+      <div class="service-card"><div class="service-icon"><i class="fab fa-facebook"></i></div><h3>Facebook Ads</h3><p>Targeted campaigns to generate leads & sales. Custom audiences & retargeting.</p><div class="product-price">₹3,000<span> / campaign</span></div></div>
+      <div class="service-card"><div class="service-icon"><i class="fab fa-google"></i></div><h3>Google Ads (PPC)</h3><p>High-intent traffic, search & display ads. Maximize ROI with expert management.</p><div class="product-price">₹5,000<span> / month</span></div></div>
+      <div class="service-card"><div class="service-icon"><i class="fas fa-code"></i></div><h3>Website Development</h3><p>Responsive, fast-loading business websites. From landing pages to e‑commerce.</p><div class="product-price">₹8,000<span> onwards</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="container">
+    <h2 class="section-title"><span>Ready-to-Buy Digital Products</span></h2>
+    <p style="text-align: center; margin-bottom: 40px; color: var(--text-muted);">Click "Get Details & Price" to see complete information and request a custom quote.</p>
+    <div class="products-grid" id="productsGrid"></div>
+    <div style="text-align: center; margin-top: 40px;">
+      <div class="contact-bar">
+        <span><i class="fas fa-headset"></i> Customer Care: <strong>+91 8825216308</strong></span>
+        <span><i class="fas fa-envelope"></i> Email: <strong>ranvirkumar8120@gmail.com</strong></span>
+        <span><i class="fab fa-whatsapp"></i> WhatsApp: <strong>+91 8825216308</strong></span>
+      </div>
+      <p class="price-note" style="margin-top: 20px;">📞 Price on demand – Contact us for best affordable rate after consultation.</p>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="container">
+    <h2 class="section-title"><span>Client Success</span></h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card"><i class="fas fa-quote-left" style="font-size: 2rem; color: var(--gold-primary);"></i><p style="margin: 20px 0;">“Google Business Profile setup brought 50+ calls in first month. Affordable and effective!”</p><h4>- Ramesh S., Local Retailer</h4></div>
+      <div class="testimonial-card"><i class="fas fa-quote-left" style="font-size: 2rem; color: var(--gold-primary);"></i><p style="margin: 20px 0;">“Ranvir’s Facebook Ads campaign doubled our online sales within 2 weeks. Highly recommended.”</p><h4>- Kavita P., E‑commerce Owner</h4></div>
+      <div class="testimonial-card"><i class="fas fa-quote-left" style="font-size: 2rem; color: var(--gold-primary);"></i><p style="margin: 20px 0;">“Transparent pricing and result-driven approach. Got my website developed under ₹8K – excellent quality.”</p><h4>- Anil K., Startup Founder</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- Enhanced Contact Section with Detailed Form -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title"><span>Get a Custom Quote</span></h2>
+    <p style="text-align: center; margin-bottom: 30px; color: var(--text-muted);">Fill the form below and we'll get back to you within 24 hours with the best price.</p>
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <h3><i class="fas fa-address-card"></i> Ranvir Digital Marketing</h3>
+        <p><i class="fas fa-user"></i> Ranvir Kumar (Founder)</p>
+        <p><i class="fas fa-map-marker-alt"></i> Murli Nagar, Saraidhela, Dhanbad - 828127</p>
+        <p><i class="fas fa-phone-alt"></i> +91 8825216308</p>
+        <p><i class="fas fa-envelope"></i> ranvirkumar8120@gmail.com</p>
+        <div style="margin: 30px 0;">
+          <i class="fab fa-whatsapp" style="color:#25D366; font-size: 28px;"></i> 
+          <strong>WhatsApp:</strong> +91 8825216308<br>
+          <small style="color: var(--text-muted);">Click the green button to chat instantly</small>
+        </div>
+        <div class="trust-badge">
+          <div class="trust-item"><i class="fas fa-clock"></i> Mon-Sat: 10AM - 7PM</div>
+          <div class="trust-item"><i class="fas fa-shield-alt"></i> 100% Privacy</div>
+        </div>
+        <p class="price-note" style="margin-top: 30px;">*Consultation is free. Final price will be discussed based on your requirements.</p>
+      </div>
+      <div class="contact-form">
+        <form id="leadForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label><i class="fas fa-user"></i> Full Name *</label>
+              <input type="text" id="fullName" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+              <label><i class="fas fa-building"></i> Business Name</label>
+              <input type="text" id="businessName" placeholder="Your business name (optional)">
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label><i class="fas fa-envelope"></i> Email Address *</label>
+              <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+              <label><i class="fas fa-phone"></i> Phone Number *</label>
+              <input type="tel" id="phone" placeholder="Enter WhatsApp number" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label><i class="fas fa-city"></i> City / Location</label>
+            <input type="text" id="city" placeholder="Your city">
+          </div>
+          
+          <div class="form-group">
+            <label><i class="fas fa-tasks"></i> Which services are you interested in? *</label>
+            <div class="service-checkboxes" id="servicesList">
+              <label><input type="checkbox" value="SEO"> SEO</label>
+              <label><input type="checkbox" value="Google Business Profile"> Google Business Profile</label>
+              <label><input type="checkbox" value="Facebook Ads"> Facebook Ads</label>
+              <label><input type="checkbox" value="Google Ads"> Google Ads</label>
+              <label><input type="checkbox" value="Website Development"> Website Development</label>
+              <label><input type="checkbox" value="Social Media Management"> Social Media Management</label>
+              <label><input type="checkbox" value="Content Marketing"> Content Marketing</label>
+              <label><input type="checkbox" value="Email Marketing"> Email Marketing</label>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label><i class="fas fa-chart-line"></i> Your Monthly Budget (₹) *</label>
+            <input type="range" id="budget" min="500" max="50000" step="500" value="5000">
+            <div class="budget-value">Selected: ₹<span id="budgetValue">5,000</span></div>
+          </div>
+          
+          <div class="form-group">
+            <label><i class="fas fa-info-circle"></i> Tell us about your project *</label>
+            <textarea id="message" rows="4" placeholder="Describe your business, goals, and what you need help with..."></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label><i class="fas fa-clock"></i> When do you want to start?</label>
+            <select id="startTime">
+              <option value="Immediately">Immediately (ASAP)</option>
+              <option value="Within a week">Within a week</option>
+              <option value="Within a month">Within a month</option>
+              <option value="Just exploring">Just exploring / Planning</option>
+            </select>
+          </div>
+          
+          <button type="submit" class="btn-primary" style="width:100%; padding: 16px;">
+            <i class="fab fa-whatsapp"></i> Submit & Get WhatsApp Response →
+          </button>
+          <p style="font-size: 0.8rem; margin-top: 12px; text-align: center;">
+            <i class="fas fa-lock"></i> Your details are safe. We'll contact you within 24 hours.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>© 2025 Ranvir Digital Marketing — Affordable Digital Solutions | Dhanbad, India</p>
+    <div style="margin-top: 16px;">
+      <a href="#" style="color: var(--gold-primary); margin: 0 12px;"><i class="fab fa-facebook"></i></a>
+      <a href="#" style="color: var(--gold-primary); margin: 0 12px;"><i class="fab fa-instagram"></i></a>
+      <a href="#" style="color: var(--gold-primary); margin: 0 12px;"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/918825216308" class="whatsapp-float" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+
+<!-- Modal Structure -->
+<div id="productModal" class="modal">
+  <div class="modal-content">
+    <span class="modal-close" id="closeModal">&times;</span>
+    <h2 id="modalTitle">Product Details</h2>
+    <div id="modalBody"></div>
+    <div class="inquiry-form">
+      <h3 style="color: var(--gold-primary); margin-top: 20px;">Request Custom Price</h3>
+      <form id="productInquiryForm">
+        <input type="hidden" id="inquiryProduct" name="product">
+        <input type="text" id="inqName" placeholder="Your Name" required>
+        <input type="email" id="inqEmail" placeholder="Email Address" required>
+        <input type="tel" id="inqPhone" placeholder="Phone Number" required>
+        <textarea id="inqMessage" rows="3" placeholder="Tell us your requirements and expected budget..."></textarea>
+        <button type="submit" class="btn-primary" style="width:100%; margin-top: 12px;">Send Inquiry →</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Product Data
+  const products = [
+    { name: "Google Business Profile Setup", price: "₹500", priceNote: "one-time", icon: "fa-store", description: "Complete listing creation, verification, and optimization for local visibility.", benefits: "Appear in Google Maps, get more calls & walk-ins, improve local SEO ranking.", process: "Account creation → Verification → Profile optimization → Add services & photos.", results: "3x increase in profile views and 2x calls within 30 days." },
+    { name: "Facebook Ad Creative Pack", price: "₹1,500", priceNote: "/ campaign", icon: "fa-ad", description: "5 ad creatives + copy + targeting setup for lead generation.", benefits: "High engagement, lower cost per lead, professional creatives.", process: "Strategy call → Design creatives → Ad copy → Targeting → Launch.", results: "Average CTR 2.5%+, lead cost reduced by 40%." },
+    { name: "Google Ads Starter", price: "₹3,500", priceNote: "/ month", icon: "fab fa-google", description: "Keyword research, ad creation, 30-day campaign management.", benefits: "Instant traffic, high-intent customers, measurable ROI.", process: "Keyword analysis → Ad structuring → Copy → Bid management.", results: "Typical ROAS 3x+ within first month." },
+    { name: "Landing Page Design", price: "₹2,500", priceNote: "one-time", icon: "fa-laptop-code", description: "Single-page responsive website optimized for conversions.", benefits: "Faster load, mobile-friendly, lead capture focused.", process: "Wireframe → Design → Coding → Form integration.", results: "Conversion rate improvement up to 50%." },
+    { name: "SEO Audit + Report", price: "₹1,200", priceNote: "/ report", icon: "fa-chart-simple", description: "Detailed technical & content audit with actionable recommendations.", benefits: "Identify ranking issues, fix technical SEO, improve site health.", process: "Crawl site → Analyze → On-page review → Deliver report.", results: "Clear roadmap to higher rankings." },
+    { name: "E‑commerce Product Listing", price: "₹2,000", priceNote: "one-time", icon: "fa-cart-shopping", description: "Optimized product uploads for Shopify / WooCommerce (up to 20 products).", benefits: "Better product visibility, SEO-friendly descriptions.", process: "Data collection → SEO titles → Upload with images.", results: "Improved organic product search ranking." },
+    { name: "Social Media Management", price: "₹4,500", priceNote: "/ month", icon: "fa-chalkboard-user", description: "30-day content calendar, 10 posts, engagement tracking.", benefits: "Consistent branding, audience growth, engagement.", process: "Strategy → Content creation → Scheduling → Reports.", results: "Average 200% increase in engagement." },
+    { name: "YouTube Channel Setup", price: "₹1,800", priceNote: "one-time", icon: "fa-video", description: "Channel art, SEO description, first video optimization.", benefits: "Professional look, discoverability.", process: "Channel branding → SEO keywords → Video optimization.", results: "Higher initial reach and subscribers." },
+    { name: "Complete Website (5 Pages)", price: "₹8,000", priceNote: "onwards", icon: "fa-tachometer-alt", description: "Professional business website with contact form, mobile responsive.", benefits: "Full online presence, custom design, fast hosting optional.", process: "Design → Development → Testing → Launch.", results: "Credibility, 24/7 availability, lead generation." },
+    { name: "Advanced SEO Package", price: "₹9,500", priceNote: "/ month", icon: "fa-chart-line", description: "30 keywords, backlinks, monthly reporting.", benefits: "Top rankings, sustainable traffic, authority building.", process: "Keyword targeting → On-page optimization → Backlinks → Reports.", results: "First-page rankings for competitive keywords." }
+  ];
+
+  const productsGrid = document.getElementById('productsGrid');
+  const modal = document.getElementById('productModal');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalBody = document.getElementById('modalBody');
+  const closeModal = document.getElementById('closeModal');
+  const inquiryProduct = document.getElementById('inquiryProduct');
+
+  products.forEach(prod => {
+    const card = document.createElement('div');
+    card.className = 'product-card';
+    card.innerHTML = `
+      <div class="product-icon"><i class="fas ${prod.icon}"></i></div>
+      <h3>${prod.name}</h3>
+      <p>${prod.description.substring(0, 80)}...</p>
+      <div class="product-price">${prod.price} <small>${prod.priceNote}</small></div>
+      <button class="btn-details" data-product='${JSON.stringify(prod)}'>📋 Get Details & Price</button>
+    `;
+    productsGrid.appendChild(card);
+  });
+
+  document.querySelectorAll('.btn-details').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const prodData = JSON.parse(btn.getAttribute('data-product'));
+      modalTitle.innerText = prodData.name;
+      modalBody.innerHTML = `
+        <div class="product-detail-info">
+          <p><strong>📌 Description:</strong> ${prodData.description}</p>
+          <p><strong>✨ Benefits:</strong> ${prodData.benefits}</p>
+          <p><strong>⚙️ Process:</strong> ${prodData.process}</p>
+          <p><strong>🏆 Results:</strong> ${prodData.results}</p>
+          <p><strong>💰 Price Range:</strong> ${prodData.price} ${prodData.priceNote}</p>
+          <p class="price-note">*Final price on demand – contact us for best affordable rate.</p>
+        </div>
+      `;
+      inquiryProduct.value = prodData.name;
+      modal.style.display = 'flex';
+    });
+  });
+
+  closeModal.onclick = () => modal.style.display = 'none';
+  window.onclick = (e) => { if (e.target === modal) modal.style.display = 'none'; };
+
+  // Budget slider
+  const budgetSlider = document.getElementById('budget');
+  const budgetValue = document.getElementById('budgetValue');
+  if(budgetSlider) {
+    budgetSlider.addEventListener('input', function() {
+      budgetValue.innerText = parseInt(this.value).toLocaleString('en-IN');
+    });
+  }
+
+  // WhatsApp Number (your number)
+  const WHATSAPP_NUMBER = "918825216308";
+
+  // Main form submission - Send to WhatsApp
+  const leadForm = document.getElementById('leadForm');
+  leadForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Get all form values
+    const fullName = document.getElementById('fullName').value.trim();
+    const businessName = document.getElementById('businessName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const city = document.getElementById('city').value.trim();
+    const budget = document.getElementById('budget').value;
+    const message = document.getElementById('message').value.trim();
+    const startTime = document.getElementById('startTime').value;
+    
+    // Get selected services
+    const selectedServices = [];
+    document.querySelectorAll('#servicesList input:checked').forEach(cb => {
+      selectedServices.push(cb.value);
+    });
+    
+    if(!fullName || !email || !phone) {
+      alert("Please fill Name, Email and Phone Number");
+      return;
+    }
+    
+    if(selectedServices.length === 0) {
+      alert("Please select at least one service you're interested in");
+      return;
+    }
+    
+    // Create WhatsApp message
+    let whatsappMsg = "🟡 *NEW CLIENT INQUIRY - RANVIR DIGITAL* 🟡%0A%0A";
+    whatsappMsg += `*👤 Name:* ${fullName}%0A`;
+    if(businessName) whatsappMsg += `*🏢 Business:* ${businessName}%0A`;
+    whatsappMsg += `*📧 Email:* ${email}%0A`;
+    whatsappMsg += `*📱 Phone:* ${phone}%0A`;
+    if(city) whatsappMsg += `*📍 Location:* ${city}%0A`;
+    whatsappMsg += `*💰 Budget:* ₹${parseInt(budget).toLocaleString('en-IN')}%0A`;
+    whatsappMsg += `*🎯 Services:* ${selectedServices.join(", ")}%0A`;
+    whatsappMsg += `*⏰ Timeline:* ${startTime}%0A`;
+    whatsappMsg += `*📝 Project Details:* ${message.substring(0, 500)}%0A%0A`;
+    whatsappMsg += `_From Ranvir Digital Marketing Website_`;
+    
+    // Open WhatsApp with message
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMsg}`;
+    window.open(whatsappUrl, '_blank');
+    
+    // Show success message
+    alert(`✅ Thank you ${fullName}! We have received your inquiry. WhatsApp will open now. Send the message to connect with us directly.`);
+    
+    // Reset form
+    leadForm.reset();
+    budgetValue.innerText = "5,000";
+    document.querySelectorAll('#servicesList input').forEach(cb => cb.checked = false);
+  });
+
+  // Product inquiry form
+  const productInquiryForm = document.getElementById('productInquiryForm');
+  productInquiryForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const product = inquiryProduct.value;
+    const name = document.getElementById('inqName').value.trim();
+    const email = document.getElementById('inqEmail').value.trim();
+    const phone = document.getElementById('inqPhone').value.trim();
+    const message = document.getElementById('inqMessage').value.trim();
+    
+    if(name && email && phone) {
+      let whatsappMsg = `🟡 *PRODUCT INQUIRY* 🟡%0A`;
+      whatsappMsg += `*Product:* ${product}%0A`;
+      whatsappMsg += `*Name:* ${name}%0A`;
+      whatsappMsg += `*Email:* ${email}%0A`;
+      whatsappMsg += `*Phone:* ${phone}%0A`;
+      whatsappMsg += `*Message:* ${message}%0A`;
+      
+      const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMsg}`;
+      window.open(whatsappUrl, '_blank');
+      alert(`✅ Thank you ${name}! WhatsApp will open now. Send the message to get the best price.`);
+      productInquiryForm.reset();
+      modal.style.display = 'none';
+    } else {
+      alert("Please fill all required fields.");
+    }
+  });
+
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('active'));
+  });
+
+  // Active nav highlight
+  const sections = document.querySelectorAll("section");
+  const navLi = document.querySelectorAll(".nav-links a");
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 120;
+      if (pageYOffset >= sectionTop) current = section.getAttribute("id");
+    });
+    navLi.forEach(li => {
+      li.classList.remove("active");
+      if (li.getAttribute("href") === `#${current}`) li.classList.add("active");
+    });
+  });
+</script>
+</body>
+</html>
